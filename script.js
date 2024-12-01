@@ -1,8 +1,10 @@
+
+
 let movies = [];
-    let currentIndex = 0;
+let currentIndex = 0;
 
     //Fetching movies from the API
-    fetch('movies.php')
+    fetch('getMovies.php')
       .then(response => response.json())
       .then(data => {
         movies = data;
@@ -24,9 +26,5 @@ let movies = [];
     function goToNextMovie(){
       currentIndex = (currentIndex + 1) % movies.length;
       displayMovie();
-    }
 
-    function goToPreviousMovie(){
-      currentIndex = (currentIndex - 1) % movies.length;
-      displayMovie();
     }
